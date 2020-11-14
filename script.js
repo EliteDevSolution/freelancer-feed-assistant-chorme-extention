@@ -6,6 +6,8 @@ $(document).ready(function(){
     <button class='btn btn-success btn-feed-assistant-reload' style='margin-left: 27px;border-radius: 50px;' id='refresh_btn'>New Feed</button>
   `);
 
+  $('.cdk-overlay-pane').css('left', '20px');
+
   loop_rand();
 
   $(document).on('mouseover', '#search-results', function(e){
@@ -15,6 +17,17 @@ $(document).ready(function(){
   $(document).on('mouseleave', '#search-results', function(e){
     autoload = true;
   });
+
+  $(document).on('click', '.ButtonElement', function(e){
+    $('.cdk-overlay-pane').css('left', '20px');
+  });
+
+  $(window).on('scroll', function(e){
+     e.preventDefault();
+    $('.cdk-overlay-pane').hide();
+  });
+
+  
   
   $(document).on('click', '.btn-feed-assistant-reload', function(e){
     e.preventDefault();
